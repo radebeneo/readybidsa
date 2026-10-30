@@ -1,0 +1,17 @@
+{
+  "name": "readybid-sa",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ReadyBid SA: tender-readiness assistant for South African small businesses.",
+  "packageManager": "pnpm@12.15.0",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "dev:web": "pnpm --filter @readybid/web dev",
+    "build:web": "pnpm --filter @readybid/web build",
+    "start:web": "pnpm --filter @readybid/web start",
+    "lint:web": "pnpm --filter @readybid/web lint",
+    "typecheck:web": "pnpm --filter @readybid/web typecheck"
+  }
+}

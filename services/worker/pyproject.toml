@@ -1,0 +1,19 @@
+[project]
+name = "readybid-worker"
+version = "0.1.0"
+description = "ReadyBid SA background worker (RQ + Redis)."
+requires-python = ">=3.13"
+dependencies = [
+  "readybid-core",
+  "rq==2.12.0",
+]
+
+[project.scripts]
+readybid-worker = "readybid_worker.main:main"
+
+[tool.uv.sources]
+readybid-core = { workspace = true }
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13"]
+build-backend = "uv_build"

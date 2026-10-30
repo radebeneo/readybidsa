@@ -1,0 +1,20 @@
+# Context check step for Bitbucket Pipelines.
+#
+# Copy the step into your project's bitbucket-pipelines.yml and run it on every
+# pull request. It fails the build when context files are missing or incomplete,
+# contain unresolved placeholders, or appear to contain secrets.
+#
+# The step uses its own Node.js image, so it works in .NET and other pipelines.
+
+definitions:
+  steps:
+    - step: &context-check
+        name: Context check
+        image: node:lts-slim
+        script:
+          - node context/check-context.mjs
+
+pipelines:
+  pull-requests:
+    '**':
+      - step: *context-check

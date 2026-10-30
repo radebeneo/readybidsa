@@ -1,0 +1,1 @@
+<!-- FILL: How schema changes (database migrations, and content types if the project has a CMS) move from development to production, who runs them and how they are approved. Also say whether content moves between environments, and in which direction. -->

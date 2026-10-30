@@ -1,0 +1,6 @@
+{
+  "id": "generic",
+  "name": "Generic",
+  "description": "Stack-neutral templates for any technology. Every stack decision is left to fill in.",
+  "extraContextFiles": []
+}

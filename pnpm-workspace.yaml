@@ -1,0 +1,9 @@
+packages:
+  - apps/*
+
+# Native build scripts are blocked unless explicitly allowed (pnpm default).
+# These defaults came from create-next-app; sharp is not needed because
+# Next.js image optimisation is not used yet.
+allowBuilds:
+  sharp: false
+  unrs-resolver: false

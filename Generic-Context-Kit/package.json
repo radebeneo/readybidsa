@@ -1,0 +1,27 @@
+{
+  "name": "context-kit",
+  "version": "1.1.0",
+  "description": "Plug-and-play AI context scaffold for enterprise solution projects. Works with OpenCode and GitHub Copilot.",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "eck": "tools/eck.mjs"
+  },
+  "files": [
+    "tools/",
+    "scaffold/",
+    "profiles/",
+    "ci/",
+    "skills/",
+    "GUIDE.md",
+    "METHODOLOGY.md",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "eck": "node tools/eck.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

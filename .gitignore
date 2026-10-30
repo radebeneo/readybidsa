@@ -1,0 +1,48 @@
+# Credentials and local environment files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+service-account*.json
+
+# Uploaded tender and company documents (never commit real documents)
+uploads/
+storage/
+tmp-uploads/
+
+# Supabase CLI local state
+supabase/.temp/
+supabase/.branches/
+
+# Redis local dumps
+dump.rdb
+appendonly*.aof
+appendonlydir/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+coverage/
+
+# Logs and OS files
+*.log
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db

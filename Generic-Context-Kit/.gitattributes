@@ -1,0 +1,5 @@
+# Keep LF line endings in the kit's scripts. The eck command's first line must
+# end in LF, or it fails on macOS when the kit is run straight from Bitbucket.
+* text=auto
+*.mjs text eol=lf
+*.json text eol=lf

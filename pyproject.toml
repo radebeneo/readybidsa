@@ -1,0 +1,46 @@
+[project]
+name = "readybid-workspace"
+version = "0.1.0"
+description = "uv workspace root for the ReadyBid SA Python services."
+requires-python = ">=3.13"
+dependencies = ["readybid-core", "readybid-api", "readybid-worker"]
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.9", "httpx>=0.28"]
+
+[tool.uv]
+# The root only groups the workspace members; it is not a package itself.
+package = false
+
+[tool.uv.workspace]
+members = ["packages/readybid_core", "services/api", "services/worker"]
+
+[tool.uv.sources]
+readybid-core = { workspace = true }
+readybid-api = { workspace = true }
+readybid-worker = { workspace = true }
+
+[tool.pytest.ini_options]
+testpaths = [
+  "packages/readybid_core/tests",
+  "services/api/tests",
+  "services/worker/tests",
+]
+addopts = "--import-mode=importlib"
+# Shared test-only helpers (tests/readybid_testing). Never imported by the app.
+pythonpath = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+# Unrelated template kit: never lint or reformat it.
+extend-exclude = ["Generic-Context-Kit", "apps", "node_modules"]
+src = [
+  "packages/readybid_core/src",
+  "services/api/src",
+  "services/worker/src",
+  "tests",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
